@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/*font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;*/
+
+:root{
+    --red: #9E022E;
+    --darkgrey: #1B1B1B;
+    --grey: #212121;
+    --lightgrey: #3F3F3F;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+    
+    background-color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1{
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    padding-bottom: 3rem;
+}
+
+#line1{
+    background-color: var(--grey);
+    margin-bottom: 3rem;
+    width: 45rem;
+    height: 1px;
+}
+
+#line2{
+    background-color: var(--grey);
+    margin-top: 3rem;
+    width: 45rem;
+    height: 1px;
+    
+}
+
+.main-container{
+    background-color: var(--darkgrey);
+    padding: 5rem 5rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    padding: 3rem;
+    
+}
+
+input, select{
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    background-color: var(--grey);
+    border-color: var(--grey);
+    border-style: solid;
+
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem 1.3rem 1.5rem;
+    
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--red);
+    border-width: 1px;
+}
+
+select:focus{
+    outline: none;
+    border-color: var(--red);
+    border-width: 1px;
+}
+
+option:focus{
+    outline: none;
+    border-color: var(--red);
+    border-width: 1px;
+}
+
+::placeholder{
+    color: var(--lightgrey);
+}
+
+
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button{
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.row-1, .row-2, .row-3, .row-4, .row-5{
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+select{
+    color: var(--lightgrey);
+    width: 18.5rem;
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="%233F3F3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+   
+
+
+}
+
+#email{
+    display: block;
+    width: 38rem;
+}
+
+
+
+
+button{
+    width: 38rem;
+    border: none;
+    background-color: var(--grey);
+    color: var(--lightgrey);
+    border-radius:12px;
+    padding: 1.3rem 0rem 1.3rem 0rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: normal;
+    transition: ease 200ms;
+    cursor: pointer;
+}
+
+p{
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--lightgrey);
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+#submit-button{
+    width: 38rem;
+    border: none;
+    background-color: var(--red);
+    color: #1B1B1B;
+    border-radius:12px;
+    padding: 1.3rem 0rem 1.3rem 0rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    transition: ease 200ms;
+}
+
+#submit-button:hover{
+    background-color: #c2043a;
+}
+
+button:hover{
+    background-color: #202020;
+}
+
+a{
+    color: var(--lightgrey);
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: normal;
+}

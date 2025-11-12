@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/*font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;*/
+
+:root{
+    --red: #9E022E;
+    --darkgrey: #1B1B1B;
+    --grey: #212121;
+    --lightgrey: #3F3F3F;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+    
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
