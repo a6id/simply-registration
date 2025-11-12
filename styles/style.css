@@ -36,6 +36,26 @@ body{
     width: 100%;
 }
 
+.error{
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--red);
+    padding-bottom: 2rem;
+}
+
+
+
+.success{
+    color: #1b8a1b;
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+    padding-bottom: 2rem;
+}
+
 h1{
     font-family: "Lexend Deca", sans-serif;
     font-size: 3.4rem;
@@ -142,7 +162,7 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
 }
 
 select{
@@ -162,7 +182,7 @@ select{
 
 #email{
     display: block;
-    width: 38rem;
+    width: 38.5rem;
 }
 
 
