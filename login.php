@@ -1,7 +1,10 @@
 <?php
 
 
+
 include("backend/database.php");
+session_start();
+
 $message = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,13 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
         
         if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
             header("Location: dashboard.php");
+            
             exit;
         } else {
-            echo "Invalid password.";
+            $message = "<div class='error'>Incorrect email or password. Please try again.</div>";
         }
     } else {
-        echo "No user found with that email.";
+        $message = "<div class='error'>Incorrect email or password. Please try again.</div>";
     }
  
     $stmt->close();
@@ -54,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="container">
         <div class="main-container">
+            <?php if (!empty($message)) echo $message; ?>
             <form action="login.php" method="POST" >
 
                 <h1>Login</h1>

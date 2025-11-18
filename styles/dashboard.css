@@ -80,7 +80,7 @@ h2{
   color: white;
 }
 
-.date{
+.date, #time{
   font-family: "JetBrains Mono", monospace;
   font-size: 3rem;
   font-weight: 400;
@@ -92,7 +92,7 @@ h2{
   gap: 15px;
 }
 
-.welcome, .date, .time{
+.welcome, .date, #time{
   background-color: var(--darkgrey);
   padding: 5rem;
   border-radius: 30px;
