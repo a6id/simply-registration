@@ -201,6 +201,7 @@ button{
     font-style: normal;
     transition: ease 200ms;
     cursor: pointer;
+    
 }
 
 p{
@@ -210,6 +211,7 @@ p{
     font-style: normal;
     color: var(--lightgrey);
     padding: 2rem 0rem 2rem 0rem;
+    text-align: center;
 }
 
 #submit-button{

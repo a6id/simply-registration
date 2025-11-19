@@ -26,25 +26,37 @@
         else {
             
             $hash = password_hash($password, PASSWORD_DEFAULT);
+            
+            $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
+            $check->bind_param("s", $email);
+            $check->execute();
+            $check->store_result(); 
+
+            if($check->num_rows > 0) {
+                
+                $message = "<div class='error'> Email already exists.</div>";
+            }   
+            else {
 
             
-            $sql = "INSERT INTO users (first_name, last_name, email, password, address, postcode, tel, gender)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            $stmt = mysqli_prepare($conn, $sql);
+                $sql = "INSERT INTO users (first_name, last_name, email, password, address, postcode, tel, gender)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $stmt = mysqli_prepare($conn, $sql);
 
-            if ($stmt) {
-                mysqli_stmt_bind_param($stmt, "ssssssss", $first_name, $last_name, $email, $hash, $address, $postcode, $tel, $gender);
-                if (mysqli_stmt_execute($stmt)) {
-                    $message = "<div class='success'>You are now registered successfully!</div>";
-                    header("Location: login.php");
+                if ($stmt) {
+                    mysqli_stmt_bind_param($stmt, "ssssssss", $first_name, $last_name, $email, $hash, $address, $postcode, $tel, $gender);
+                    if (mysqli_stmt_execute($stmt)) {
+                        $message = "<div class='success'>You are now registered successfully!</div>";
+                        header("Location: login.php");
+                    } 
+                    else {
+                        $message = "<div class='error' Could not register. Please try again later.</div>";
+                    }
+                    mysqli_stmt_close($stmt);
                 } 
                 else {
-                    $message = "<div class='error' Could not register. Please try again later.</div>";
+                    $message = "<div class='error'>Database error: unable to prepare statement.</div>";
                 }
-                mysqli_stmt_close($stmt);
-            } 
-            else {
-                $message = "<div class='error'>Database error: unable to prepare statement.</div>";
             }
         }
 
@@ -75,7 +87,7 @@
 
                 <div class="row-1">
                     <input type="text" name="first_name" placeholder="First Name" required>
-                    <input type="text" name="last_name" placeholder="Second Name" required>
+                    <input type="text" name="last_name" placeholder="Second Name">
                 </div>
 
                 <div class="row-5">
